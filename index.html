@@ -1,10 +1,24 @@
 <html>
-<head>
-    <title>Test SMS Link</title>
-</head>
+
+<head></head>
+
 <body>
-    <ul style="font-size:2em;">
-        <li><a href="sms:1922?&body=場所代碼：1111%202131%20415%201617 %0A本次實聯簡訊%0A限%0A防%0A疫%0A目%0A的%0A使用。">發送簡訊</li>
-    </ul>
+    <a id="downloadFileLink" href="">LINK</a>
+    <script>
+        window.onload = (event) => {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            downloadLink = urlParams.get("downloadLink")
+            console.log(`link = ${downloadLink}`)
+            if (downloadLink) {
+                element = document.getElementById("downloadFileLink")
+                element.href = downloadLink
+                element.download = true
+                element.click()
+            }
+        };
+
+    </script>
 </body>
+
 </html>
